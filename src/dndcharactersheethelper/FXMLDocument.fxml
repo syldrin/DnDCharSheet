@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dndcharactersheethelper.FXMLDocumentController">
+    <children>
+        <Button fx:id="button" layoutX="126" layoutY="90" onAction="#handleButtonAction" text="Click Me!" />
+        <Label fx:id="label" layoutX="22.0" layoutY="14.0" minHeight="16" minWidth="28.0" prefHeight="17.0" prefWidth="276.0" />
+      <Label fx:id="laba" layoutX="28.0" layoutY="31.0" />
+      <Label fx:id="labb" layoutX="75.0" layoutY="31.0" />
+      <Label fx:id="labc" layoutX="120.0" layoutY="31.0" />
+      <Label fx:id="labd" layoutX="163.0" layoutY="31.0" />
+      <Label fx:id="labe" layoutX="208.0" layoutY="31.0" />
+      <Label fx:id="labf" layoutX="255.0" layoutY="31.0" />
+      <Button fx:id="confAtr" layoutX="34.0" layoutY="140.0" mnemonicParsing="false" text="Confirm" visible="false" />
+      <Button fx:id="reset" layoutX="229.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleResetAction" text="reset" visible="false" />
+    </children>
+</AnchorPane>
