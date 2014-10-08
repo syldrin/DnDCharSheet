@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.*;
 
 /**
  *
@@ -40,6 +41,7 @@ public class FXMLDocumentController implements Initializable {
     public Button button;
     public Button reset;
     public Button confAtr;
+    public AnchorPane abilityScore, test;
             
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -80,6 +82,12 @@ public class FXMLDocumentController implements Initializable {
         labe.setText(String.valueOf(e));
         labf.setText(String.valueOf(f));
         
+    }
+    
+    @FXML
+    private void handleConfirmAction(ActionEvent event) {
+        abilityScore.setVisible(false);
+        test.setVisible(true);
     }
     
     @FXML
