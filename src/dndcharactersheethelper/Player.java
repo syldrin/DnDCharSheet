@@ -14,11 +14,20 @@ import java.util.Random;
 public class Player extends Creature{
     Random rand = new Random();
     private int lvl;
+    private int hitDie;
     private String race;
     private String job;
     private String[] races = {"Dwarf","Elf","Gnome","Half-Elf","Halfling","Half-Orc","Human"};
     private String[] jobs = {"Barbarian","Bard","Cleric","Druid","Fighter","Monk","Paladin","Ranger","Rogue","Sorcerer","Wizard"};
     
+    
+    public void setHitDie(int l){
+        hitDie = l;
+    }
+    
+    public int getHitDie(){
+        return hitDie;    
+    }
     
     public void setLvl(int l){
         lvl = l;
