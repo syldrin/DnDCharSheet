@@ -1,31 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dndcharactersheethelper.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="484.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dndcharactersheethelper.FXMLDocumentController">
     <children>
-      <AnchorPane fx:id="abilityScore" prefHeight="200.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-              <Button fx:id="button" layoutX="128.0" layoutY="88.0" onAction="#handleButtonAction" text="Click Me!" />
-              <Label fx:id="label" layoutX="22.0" layoutY="17.0" minHeight="16" minWidth="28.0" prefHeight="17.0" prefWidth="276.0" />
-            <Label fx:id="laba" />
-            <Label fx:id="labb" />
-            <Label fx:id="labc" />
-            <Label fx:id="labd" />
-            <Label fx:id="labe" />
-            <Label fx:id="labf" />
-            <Button fx:id="confAtr" layoutX="40.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleConfirmAction" text="Confirm" visible="false" />
-            <Button fx:id="reset" layoutX="220.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleResetAction" text="reset" visible="false" />
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="test" prefHeight="200.0" prefWidth="320.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label layoutX="50.0" layoutY="92.0" text="Label" />
          </children>
       </AnchorPane>
+      <ImageView fitHeight="423.0" fitWidth="928.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@DndSheetBackground.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="abilityScore" layoutX="307.0" layoutY="138.0" scaleShape="false" AnchorPane.bottomAnchor="138.0" AnchorPane.leftAnchor="307.0" AnchorPane.rightAnchor="308.0" AnchorPane.topAnchor="138.0">
+         <children>
+            <ImageView fitHeight="208.0" fitWidth="302.0" nodeOrientation="INHERIT" pickOnBounds="true">
+               <image>
+                  <Image url="@border.jpg" />
+               </image>
+            </ImageView>
+              <Button fx:id="button" alignment="CENTER" layoutX="131.0" layoutY="92.0" onAction="#handleButtonAction" text="Roll!" />
+            <Label fx:id="scorPoint6" layoutX="248.0" layoutY="54.0" text=" ^" visible="false" />
+            <Label fx:id="scorPoint5" layoutX="203.0" layoutY="54.0" text=" ^" visible="false" />
+            <Label fx:id="scorPoint4" layoutX="156.0" layoutY="54.0" text=" ^" visible="false" />
+            <Label fx:id="scorPoint3" layoutX="110.0" layoutY="54.0" text=" ^" visible="false" />
+            <Label fx:id="scorPoint2" layoutX="70.0" layoutY="54.0" text=" ^" visible="false" />
+            <Label fx:id="scorPoint1" layoutX="25.0" layoutY="54.0" text=" ^" visible="false" />
+            <Label fx:id="scorLab6" layoutX="249.0" layoutY="37.0" text=" " />
+            <Label fx:id="scorLab5" layoutX="203.0" layoutY="37.0" text=" " />
+            <Label fx:id="scorLab4" layoutX="156.0" layoutY="37.0" text="        " />
+            <Label fx:id="scorLab3" layoutX="110.0" layoutY="37.0" text="        " />
+            <Label fx:id="scorLab2" layoutX="70.0" layoutY="37.0" text="         " />
+            <Label fx:id="scorLab1" layoutX="25.0" layoutY="37.0" text="         " />
+              <Label fx:id="label" layoutX="39.0" layoutY="20.0" minHeight="16" minWidth="28.0" prefHeight="17.0" prefWidth="224.0" />
+            <Button fx:id="confAtr" layoutX="40.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleConfirmAction" text="Confirm" visible="false" />
+            <Button fx:id="reset" layoutX="208.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleResetAction" prefHeight="25.0" prefWidth="59.0" text="Reroll" visible="false" />
+            <Button fx:id="strBut" layoutX="25.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleStrButAction" prefHeight="25.0" prefWidth="52.0" text="Str" visible="false" />
+            <Button fx:id="dexBut" layoutX="25.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleDexButAction" prefHeight="25.0" prefWidth="52.0" text="Dex" visible="false" />
+            <Button fx:id="conBut" layoutX="125.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleConButAction" prefHeight="25.0" prefWidth="52.0" text="Con" visible="false" />
+            <Button fx:id="intBut" layoutX="125.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleIntButAction" prefHeight="25.0" prefWidth="52.0" text="Int" visible="false" />
+            <Button fx:id="wisBut" layoutX="224.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleWisButAction" prefHeight="25.0" prefWidth="52.0" text="Wis" visible="false" />
+            <Button fx:id="chaBut" layoutX="224.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleChaButAction" prefHeight="25.0" prefWidth="52.0" text="Cha" visible="false" />
+            <Label fx:id="instru" layoutX="70.0" layoutY="65.0" text="Select an Ability to place score" visible="false" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="str" layoutX="91.0" layoutY="165.0" text="Label" visible="false" />
+      <Label fx:id="dex" layoutX="91.0" layoutY="195.0" text="Label" visible="false" />
+      <Label fx:id="con" layoutX="91.0" layoutY="228.0" text="Label" visible="false" />
+      <Label fx:id="intel" layoutX="91.0" layoutY="262.0" text="Label" visible="false" />
+      <Label fx:id="wis" layoutX="91.0" layoutY="294.0" text="Label" visible="false" />
+      <Label fx:id="cha" layoutX="91.0" layoutY="326.0" text="Label" visible="false" />
     </children>
 </AnchorPane>

@@ -25,6 +25,7 @@ public class Player extends Creature{
         hitDie = l;
     }
     
+    
     public int getHitDie(){
         return hitDie;    
     }
@@ -49,8 +50,58 @@ public class Player extends Creature{
         return races;
     }
     
+    public int hpGain(int i){
+        return super.getHp()+super.getConMod()+1+rand.nextInt(i);
+    }
     public void setJob(int i){
         job = jobs[i];
+        lvl=1;
+        switch(i){
+            case 0://Barbarian
+                hitDie=12;
+                super.setHp(this.hpGain(hitDie));
+                break;
+            case 1://Bard
+                hitDie=8;
+                super.setHp(this.hpGain(hitDie));
+                break;
+            case 2://Cleric
+                hitDie=8;
+                super.setHp(this.hpGain(hitDie));
+                break;
+            case 3://Druid
+                hitDie=8;
+                super.setHp(this.hpGain(hitDie));
+                break;
+            case 4://Fighter
+                hitDie=10;
+                super.setHp(this.hpGain(hitDie));
+                break;
+            case 5://Monk
+                hitDie=8;
+                super.setHp(this.hpGain(hitDie));
+                break;
+            case 6://Paladin
+                hitDie=10;
+                super.setHp(this.hpGain(hitDie));
+                break;
+            case 7://Ranger
+                hitDie=10;
+                super.setHp(this.hpGain(hitDie));
+                break;
+            case 8://Rogue    
+                hitDie=8;
+                super.setHp(this.hpGain(hitDie));
+                break;
+            case 9://Sorcerer
+                hitDie=6;
+                super.setHp(this.hpGain(hitDie));
+                break;
+            case 10://Wizard
+                hitDie=6;
+                super.setHp(this.hpGain(hitDie));
+                break;
+        }
     }
     
     public String getJob(){
@@ -67,25 +118,25 @@ public class Player extends Creature{
             if(race.equals(races[i])) k = i;
         }
         switch(k){
-            case 0:
+            case 0://Dwarf
                 super.setCon(super.getCon()+2);
                 super.setWis(super.getWis()+2);
                 super.setCha(super.getCha()-2);
                 super.setSpeed(20);
                 break;
-            case 1:
+            case 1://Elf
                 super.setDex(super.getDex()+2);
                 super.setInt(super.getInt()+2);
                 super.setCon(super.getCon()-2);
                 super.setSpeed(30);
                 break;
-            case 2:
+            case 2://Gnome
                 super.setCon(super.getCon()+2);
                 super.setCha(super.getCha()+2);
                 super.setStr(super.getStr()-2);
                 super.setSpeed(20);
                 break;
-            case 3:
+            case 3://Halfelf
                 switch(j){
                     case 1:
                         super.setStr(super.getStr()+2);
@@ -108,14 +159,14 @@ public class Player extends Creature{
                 }
                 super.setSpeed(30);
                 break;
-            case 4:
+            case 4://Halfling
                 super.setDex(super.getDex()+2);
                 super.setCha(super.getCha()+2);
                 super.setStr(super.getStr()-2);
                 super.setSpeed(20);
                 break;
-            case 5:
-            case 6:
+            case 5://Half-orc
+            case 6://Human
                 switch(j){
                     case 1:
                         super.setStr(super.getStr()+2);
@@ -166,6 +217,7 @@ public class Player extends Creature{
                         break;
                 }
             super.setMods();
+            super.setHp(this.hpGain(hitDie));
         }
     }
     
@@ -175,15 +227,14 @@ public class Player extends Creature{
             if(job.equals(jobs[i])) k = i;
         }
         switch(k){
-            case 0:
-                super.setHp(super.getHp()+super.getConMod()+1+rand.nextInt(12));
+            case 0://Barbarian                
                 super.setBab(lvl);
                 super.setFort((lvl/2)+2);
                 super.setReflex(lvl/3);
                 super.setWill(lvl/3);
                 break;
-            case 1:
-                super.setHp(super.getHp()+super.getConMod()+1+rand.nextInt(8));
+            case 1://Bard
+                
                 switch(lvl){
                     case 1:super.setBab(0);
                     case 2:super.setBab(1);
@@ -210,8 +261,8 @@ public class Player extends Creature{
                 super.setReflex((lvl/2)+2);
                 super.setWill((lvl/2)+2);
                 break;
-            case 2:
-                super.setHp(super.getHp()+super.getConMod()+1+rand.nextInt(8));
+            case 2://Cleric
+                
                 switch(lvl){
                     case 1:super.setBab(0);
                     case 2:super.setBab(1);
@@ -238,14 +289,117 @@ public class Player extends Creature{
                 super.setReflex(lvl/3);
                 super.setWill((lvl/2)+2);
                 break;
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
+            case 3://Druid
+                switch(lvl){
+                    case 1:super.setBab(0);
+                    case 2:super.setBab(1);
+                    case 3:super.setBab(2);
+                    case 4:super.setBab(3);
+                    case 5:super.setBab(3);
+                    case 6:super.setBab(4);
+                    case 7:super.setBab(5);
+                    case 8:super.setBab(6);
+                    case 9:super.setBab(6);
+                    case 10:super.setBab(7);
+                    case 11:super.setBab(8);
+                    case 12:super.setBab(9);
+                    case 13:super.setBab(9);
+                    case 14:super.setBab(10);
+                    case 15:super.setBab(11);
+                    case 16:super.setBab(12);
+                    case 17:super.setBab(12);
+                    case 18:super.setBab(13);
+                    case 19:super.setBab(14);
+                    case 20:super.setBab(15); 
+                }
+                super.setFort((lvl/2)+2);
+                super.setReflex(lvl/3);
+                super.setWill((lvl/2)+2);
+                break;
+            case 4://Fighter
+                super.setBab(lvl);
+                super.setFort((lvl/2)+2);
+                super.setReflex(lvl/3);
+                super.setWill(lvl/3);
+                break;
+            case 5://Monk
+                switch(lvl){
+                    case 1:super.setBab(0);
+                    case 2:super.setBab(1);
+                    case 3:super.setBab(2);
+                    case 4:super.setBab(3);
+                    case 5:super.setBab(3);
+                    case 6:super.setBab(4);
+                    case 7:super.setBab(5);
+                    case 8:super.setBab(6);
+                    case 9:super.setBab(6);
+                    case 10:super.setBab(7);
+                    case 11:super.setBab(8);
+                    case 12:super.setBab(9);
+                    case 13:super.setBab(9);
+                    case 14:super.setBab(10);
+                    case 15:super.setBab(11);
+                    case 16:super.setBab(12);
+                    case 17:super.setBab(12);
+                    case 18:super.setBab(13);
+                    case 19:super.setBab(14);
+                    case 20:super.setBab(15); 
+                }
+                super.setFort((lvl/2)+2);
+                super.setReflex((lvl/2)+2);
+                super.setWill((lvl/2)+2);
+                break;
+            case 6://Paladin
+                super.setBab(lvl);
+                super.setFort((lvl/2)+2);
+                super.setReflex(lvl/3);
+                super.setWill((lvl/2)+2);
+                break;
+            case 7://Ranger
+                super.setBab(lvl);
+                super.setFort((lvl/2)+2);
+                super.setReflex((lvl/2)+2);
+                super.setWill(lvl/3);
+                break;
+            case 8://Rogue    
+                switch(lvl){
+                    case 1:super.setBab(0);
+                    case 2:super.setBab(1);
+                    case 3:super.setBab(2);
+                    case 4:super.setBab(3);
+                    case 5:super.setBab(3);
+                    case 6:super.setBab(4);
+                    case 7:super.setBab(5);
+                    case 8:super.setBab(6);
+                    case 9:super.setBab(6);
+                    case 10:super.setBab(7);
+                    case 11:super.setBab(8);
+                    case 12:super.setBab(9);
+                    case 13:super.setBab(9);
+                    case 14:super.setBab(10);
+                    case 15:super.setBab(11);
+                    case 16:super.setBab(12);
+                    case 17:super.setBab(12);
+                    case 18:super.setBab(13);
+                    case 19:super.setBab(14);
+                    case 20:super.setBab(15); 
+                }
+                super.setFort(lvl/3);
+                super.setReflex((lvl/2)+2);
+                super.setWill(lvl/3);
+                break;
+            case 9://Sorcerer
+                super.setBab(lvl/2);
+                super.setFort(lvl/3);
+                super.setReflex(lvl/3);
+                super.setWill((lvl/2)+2);
+                break;
+            case 10://Wizard
+                super.setBab(lvl/2);
+                super.setFort(lvl/3);
+                super.setReflex(lvl/3);
+                super.setWill((lvl/2)+2);
+                break;
         }
     }
     
